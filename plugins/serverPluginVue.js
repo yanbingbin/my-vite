@@ -5,7 +5,6 @@ const defaultExportRE = /((?:^|\n|;)\s)export default/;
 
 function vuePlugin({ app, root }) {
     app.use(async (ctx, next) => {
-        console.log('ctx: ', ctx.path);
         if (!ctx.path.endsWith('.vue')) {
             return next();
         }
